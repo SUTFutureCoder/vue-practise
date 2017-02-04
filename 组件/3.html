@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="example-2">
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+</div>
+<script>
+    import Vue from 'vue'
+    var data = { counter: 0 };
+    Vue.component('simple-counter', {
+        template: '<button v-on:click="counter += 1">{{counter}}</button>',
+        //data是一个函数，因此VUE不会警告
+        data: function () {
+//            return data
+            return { counter: 0 };
+        }
+    });
+    new Vue({
+        el: '#example-2'
+    });
+</script>
+</body>
+</html>

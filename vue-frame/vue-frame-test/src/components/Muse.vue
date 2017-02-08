@@ -21,6 +21,9 @@ export default {
     return {
       msg: 'Hello World!'
     }
+  },
+  test () {
+    return this.$store.state.count
   }
 }
 </script>
